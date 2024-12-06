@@ -73,4 +73,55 @@ for (let row = 0; row < numRows; ++row) {
 
 console.log('Day 4 part 1', solution)
 
+solution = 0
 
+for (let row = 0; row < numRows; ++row) {
+    for (let col = 0; col < numCols; ++col) {
+        if (row < numRows - 2 &&
+            x[row][col] === 'M' &&
+            x[row + 2][col] === 'M') {
+
+            if (x[row + 1][col + 1] === 'A' &&
+                x[row][col + 2] === 'S' &&
+                x[row + 2][col + 2] === 'S'
+            ) {
+                ++solution
+            }
+
+            if (x[row + 1][col - 1] === 'A' &&
+                x[row][col - 2] === 'S' &&
+                x[row + 2][col - 2] === 'S'
+            ) {
+                ++solution
+            }
+        }
+
+        // Up
+        if (row > 1 &&
+            x[row][col] === 'M' &&
+            x[row][col + 2] === 'M') {
+
+            if (x[row - 1][col + 1] === 'A' &&
+                x[row - 2][col] === 'S' &&
+                x[row - 2][col + 2] === 'S'
+            ) {
+                ++solution
+            }
+        }
+
+        // Down
+        if (row < numRows - 2 &&
+            x[row][col] === 'M' &&
+            x[row][col + 2] === 'M') {
+
+            if (x[row + 1][col + 1] === 'A' &&
+                x[row + 2][col] === 'S' &&
+                x[row + 2][col + 2] === 'S'
+            ) {
+                ++solution
+            }
+        }
+    }
+}
+
+console.log('Day 4 part 2', solution)
