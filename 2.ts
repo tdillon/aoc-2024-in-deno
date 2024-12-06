@@ -8,11 +8,11 @@ function isValidReport(r: number[]): boolean {
             r.toSorted((a, b) => a - b).toReversed().toString() === r.toString())
 }
 
-console.log('Part 1',
+console.log('Day 2 part 1',
     x.reduce((prev, cur) => prev + (isValidReport(cur) ? 1 : 0), 0)
 )
 
-console.log('Part 2',
+console.log('Day 2 part 2',
     x.reduce((prev, cur) => prev + (isValidReport(cur) ? 1 :
         cur.map((_, idx, arr) => arr.filter((_, i) => i != idx))
             .reduce((p, c) => p | (isValidReport(c) ? 1 : 0), 0)
