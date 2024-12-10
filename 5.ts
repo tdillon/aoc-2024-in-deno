@@ -3,7 +3,6 @@ const input = (await Deno.readTextFile('input/5.txt')).split('\n')
 const rules = new Set<string>()
 
 let solutionP1 = 0
-let solutionP2 = 0
 
 for (const line of input) {
     if (line[2] === '|') {
@@ -29,4 +28,3 @@ for (const line of input) {
 }
 
 console.log('Day 5 part 1', solutionP1)
-console.log('Day 5 part 2', solutionP2)
