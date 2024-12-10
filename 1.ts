@@ -10,4 +10,4 @@ for (let i = 0; i < y.length; ++i) {
     sum += Math.abs(y[i] - z[i])
 }
 
-console.log(sum)
+console.log('Day 1 part 1', sum)
