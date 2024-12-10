@@ -9,5 +9,5 @@ https://deno.com/blog/advent-of-code-2024
 Download input file (e.g., `https://adventofcode.com/2024/day/<DAY>/input`) to `input/<DAY>.txt`.
 
 ```shell
-deno run --allow-read=input <DAY>.ts
+ls *.ts | xargs -I {} deno run --allow-read=input {}
 ```
